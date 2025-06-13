@@ -1,0 +1,83 @@
+  @font-face {
+        font-family: 'Zpix';
+        src: url('/fonts/zpix.ttf') format('truetype');
+    }
+    body {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 1px, transparent 1px);
+        background-size: 30px 30px; /* 每個格子大小 */
+        background-color: rgb(190, 194, 212); /* 背景底色像紙一樣 */
+        font-family: 'Zpix', monospace;
+        padding-top: 70px;
+        /* color:rgb(238, 129, 58); */
+        color: rgb(254, 251, 247);
+    }
+
+    .portfolio-section {
+        position: relative;
+        background-color: #f8f9fa;
+        padding: 2rem 1rem 1rem;
+        margin-bottom: 3rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .section-tab {
+        position: absolute;
+        top: -35px;
+        left: 0;
+        background-color: #ffc107;
+        padding-top:5px;
+        padding-botton:5px;
+        padding-left:10px;
+        padding-right:40px;
+        
+        clip-path: polygon(0 0, 0% 75%, 100% 75%, 60% 0%);
+        font-weight: bold;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        height: 50px; /* 加上這行 */
+        color: rgb(68, 66, 80);
+        z-index: -1;
+    }
+
+    .section-tab p{
+            color: rgb(68, 66, 80);
+
+    }
+    .portfolio-item {
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+        .portfolio-item:hover {
+            transform: scale(1.03);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+    .floating-image {
+    position: absolute;
+    top: -80px; /* 往上浮在 section-tab 上方 */
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float-left-right 3s ease-in-out infinite;
+    z-index: 10;
+}
+
+.floating-image img {
+    height: 100px; /* 可依需求調整圖片大小 */
+    pointer-events: none;
+}
+
+/* 左右晃動畫效果 */
+@keyframes float-left-right {
+    0% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-60%) translateY(0); }
+    100% { transform: translateX(-50%) translateY(0); }
+}
+</style>
